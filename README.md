@@ -28,7 +28,7 @@ $ Read the Docs (https://readthedocs.org)
 
 ## Developing an fMRI preprocessing pipeline
 
-We will utilize a segment of our fMRI preprocessing tool, NeuroGraph (https://neurograph.readthedocs.io/en/latest/), offering a suite of tools for downloading, preprocessing, and generating graph-based representations and benchmarks. The implementation will be carried out in the Python programming language, and our project follows the structure outlined below.
+We will utilize a segment of our fMRI preprocessing tool, NeuroGraph (https://neurograph.readthedocs.io/en/latest/), offering a suite of tools for downloading, preprocessing, and generating graph-based representations and benchmarks. The implementation will be carried out in the Python programming language, and our project follows the structure shown below.
 
 <p align="center">
 <img src="structure.png" alt="Alt text" width="50%" height="50%">
