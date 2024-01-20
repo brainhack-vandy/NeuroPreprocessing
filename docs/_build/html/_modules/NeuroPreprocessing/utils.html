@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuroPrep.utils &mdash; NeuroPrep 0.2.0 documentation</title>
+  <title>NeuroPreprocessing.utils &mdash; NeuroPreprocessing 0.1.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
           
           
           <a href="../../index.html" class="icon icon-home">
-            NeuroPrep
+            NeuroPreprocessing
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -50,7 +50,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">NeuroPrep</a>
+          <a href="../../index.html">NeuroPreprocessing</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -59,7 +59,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">NeuroPrep.utils</li>
+      <li class="breadcrumb-item active">NeuroPreprocessing.utils</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -68,7 +68,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for NeuroPrep.utils</h1><div class="highlight"><pre>
+  <h1>Source code for NeuroPreprocessing.utils</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_atlas_schaefer_2018</span>
 <span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">load_img</span>
 <span class="kn">from</span> <span class="nn">nilearn.connectome</span> <span class="kn">import</span> <span class="n">ConnectivityMeasure</span>
@@ -77,7 +77,7 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<div class="viewcode-block" id="parcellation"><a class="viewcode-back" href="../../utils.html#NeuroPrep.utils.parcellation">[docs]</a><span class="k">def</span> <span class="nf">parcellation</span><span class="p">(</span><span class="n">fmri</span><span class="p">,</span> <span class="n">n_rois</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<div class="viewcode-block" id="parcellation"><a class="viewcode-back" href="../../utils.html#NeuroPreprocessing.utils.parcellation">[docs]</a><span class="k">def</span> <span class="nf">parcellation</span><span class="p">(</span><span class="n">fmri</span><span class="p">,</span> <span class="n">n_rois</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Prepfrom brain parcellation</span>
 
@@ -108,7 +108,7 @@
     <span class="k">return</span> <span class="n">Y</span></div>
 
 
-<div class="viewcode-block" id="remove_drifts"><a class="viewcode-back" href="../../utils.html#NeuroPrep.utils.remove_drifts">[docs]</a><span class="k">def</span> <span class="nf">remove_drifts</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
+<div class="viewcode-block" id="remove_drifts"><a class="viewcode-back" href="../../utils.html#NeuroPreprocessing.utils.remove_drifts">[docs]</a><span class="k">def</span> <span class="nf">remove_drifts</span><span class="p">(</span><span class="n">Y</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function removes the scanner drifts in the fMRI signals that arise from instrumental factors. By eliminating these trends, we enhance the signal-to-noise ratio and increase the sensitivity to neural activity.</span>
 <span class="sd">    </span>
@@ -124,7 +124,7 @@
     <span class="k">return</span> <span class="n">Yt</span></div>
 
 
-<div class="viewcode-block" id="regress_head_motions"><a class="viewcode-back" href="../../utils.html#NeuroPrep.utils.regress_head_motions">[docs]</a><span class="k">def</span> <span class="nf">regress_head_motions</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">regs</span><span class="p">):</span>
+<div class="viewcode-block" id="regress_head_motions"><a class="viewcode-back" href="../../utils.html#NeuroPreprocessing.utils.regress_head_motions">[docs]</a><span class="k">def</span> <span class="nf">regress_head_motions</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">regs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function regress out six rigid- body head motion parameters, along with their derivatives, from the fMRI data</span>
 <span class="sd">    </span>
@@ -136,7 +136,7 @@
     <span class="n">m</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">regs</span><span class="p">,</span> <span class="n">B2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">m</span></div>
 
-<div class="viewcode-block" id="construct_corr"><a class="viewcode-back" href="../../utils.html#NeuroPrep.utils.construct_corr">[docs]</a><span class="k">def</span> <span class="nf">construct_corr</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<div class="viewcode-block" id="construct_corr"><a class="viewcode-back" href="../../utils.html#NeuroPreprocessing.utils.construct_corr">[docs]</a><span class="k">def</span> <span class="nf">construct_corr</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function construct correlation matrix from the preprocessed fmri matrix</span>
 <span class="sd">    Args.</span>
