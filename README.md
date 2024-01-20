@@ -1,6 +1,6 @@
 # Reproducible Project Management
 
-Reproducible project management is the cornerstone of efficient and transparent workflows in the development and collaboration world. It involves implementing practices and utilizing tools that ensure the consistent and reliable reproduction of project results. To ensure reproducibility, creating and publishing packages, and open-source documentation play a key role. In this hands-on session, I will walk you through open-sourcing Python projects with GitHub, publishing packages online through PyPI (Python Package Index), dockerization, and creating detailed documentation with Read the Docs.
+Reproducible project management is the cornerstone of efficient and transparent workflows in the development and collaboration world. It involves implementing practices and utilizing tools that ensure the consistent and reliable reproducibility of project results. To ensure reproducibility, creating and publishing packages, and open-source documentation play a key role. In this hands-on session, I will walk you through open-sourcing Python projects with GitHub, publishing packages online through PyPI (Python Package Index), dockerization, and creating detailed documentation with Read the Docs.
 
 
 ## Getting started
@@ -19,7 +19,7 @@ $ pip install numpy nilearn docker setuptools wheel and twine sphinx sphinx_rtd_
 
 ```
 $ GitHub (https://github.com)
-$ Python Package Index (PyPI) (https://pypi.org). Make sure that you genearte API token and save it on your machine
+$ Python Package Index (PyPI) (https://pypi.org). Make sure you genearte API token and save it on your machine
 $ Docker hub (https://hub.docker.com)
 $ Read the Docs (https://readthedocs.org)
 
@@ -28,13 +28,13 @@ $ Read the Docs (https://readthedocs.org)
 
 ## Developing an fMRI preprocessing pipeline
 
-We will be using part of our fMRI preprocessing tool, NeuroGraph (https://neurograph.readthedocs.io/en/latest/) that provides a set of tools for downloading, preprocessing and creating graph-based representations and benchmarks. We will use Python programming language. Our project structure is as follows. 
+We will utilize a segment of our fMRI preprocessing tool, NeuroGraph (https://neurograph.readthedocs.io/en/latest/), offering a suite of tools for downloading, preprocessing, and generating graph-based representations and benchmarks. The implementation will be carried out in the Python programming language, and our project follows the structure outlined below.
 
 <p align="center">
 <img src="structure.png" alt="Alt text" width="50%" height="50%">
 </p>
 
-The utils.py file has the implementation for the fMRI preprocessing. main.py file consider a single example and use the pipeline to preprocess the data. 
+The utils.py file contains the implementation for fMRI preprocessing, while the main.py file takes a single example and employs the pipeline to preprocess the data.
 
 ## Packaging and publishing Python projects
 
@@ -42,11 +42,11 @@ Publishing packages online offers widespread accessibility, allowing developers 
 
 
 ```
-$ python setup.py sdist bdist_wheel (this command should create the distribution folder (dist))
-$ twine check dist/*   (this check the package and return errors if any) 
+$ python setup.py sdist bdist_wheel (this command should creates the distribution folder (dist))
+$ twine check dist/*   (check the package) 
 ```
 
-Now, to upload the package to PyPI, we create an account on PyPI and obtain the API key. Using the API key, we create a ".pypirc" file and save it in the home folder (~/.pypirc). We can then upload the package to PyPI as follows.
+To upload the package to PyPI, we wstart by creating an account on PyPI and acquiring the API key. Utilize the API key to generate a ".pypirc" file, saving it in the home folder (~/.pypirc). An example of the .pypirc file is provided. Following these steps, we proceed to upload the package to PyPI as outlined below.
 
 ```
 $ twine upload dist/*
@@ -64,7 +64,7 @@ First, we create an account on Docker and install Docker Desktop. Then we need t
 
 
 ```
-$ docker build -t --name-of-the-docker
+$ docker build -t --name-of-the-docker-image
 $ docker images (check the docker image)
 $ docker login   (login to the docker hub)
 $ docker push --image-name
