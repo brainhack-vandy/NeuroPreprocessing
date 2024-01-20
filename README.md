@@ -97,11 +97,3 @@ We have successfully created the documenatation. The index.html (main page) can 
 
 To initiate the documentation publishing process, start by creating a readthedocs.yaml file that configures settings for the project. Subsequently, upload the latest package along with all the files to GitHub. Proceed to log in to https://readthedocs.org, click on "import a project," select your project from GitHub, and follow the provided steps. Once completed, build your package, and congratulations, your package and its documentation are now published.
 
-
-
-
-
-
-
-
-
