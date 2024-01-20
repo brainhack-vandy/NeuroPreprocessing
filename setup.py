@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 # with open("README.md", "r") as fh:
 #     long_description = fh.read()
 setup(
-    name='NeuroPrep',
+    name='NeuroPreprocessing',
     version='0.1.0',
     long_description='A Python Package for processing fMRI',
     long_description_content_type='text/markdown',

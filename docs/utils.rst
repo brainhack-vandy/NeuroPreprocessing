@@ -1,7 +1,7 @@
 NeuroGraph Preprocessing
 ========================================
 
-.. automodule:: NeuroPrep.utils
+.. automodule:: NeuroPreprocessing.utils
    :members:
    :undoc-members:
    :show-inheritance:

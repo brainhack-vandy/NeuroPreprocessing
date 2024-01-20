@@ -1,5 +1,5 @@
 from nilearn.image import load_img
-from NeuroPrep import utils
+from NeuroPreprocessing import utils
 import numpy as np
 import random
 
